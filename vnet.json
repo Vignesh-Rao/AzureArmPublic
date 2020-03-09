@@ -1,0 +1,44 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnetName": {
+            "defaultValue": "testvnet",
+            "type": "String",
+            "metadata": {
+                "description": "Name of the virtual network"
+            }
+        },
+        "vnetCidr": {
+            "defaultValue": "10.100.0.0/16",
+            "type": "String",
+            "metadata": {
+                "description": "Cidr for the vnet"
+            }
+        }
+    },
+    "variables": {
+        "apiVersion": "2015-06-15"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "[variables('apiVersion')]",
+            "name": "[parameters('vnetName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[parameters('vnetCidr')]"
+                    ]
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "vnetId": {
+            "type": "String",
+            "value": "[reference(resourceId('Microsoft.Network/virtualNetworks', parameters('vnetName'))).resourceGuid]"
+        }
+    }
+}
