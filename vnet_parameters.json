@@ -6,7 +6,7 @@
           "value": "testvnet"
       },
       "vnetCidr": {
-          "value": "10.100.0.0/16"
+          "value": "10.20.0.0/16"
       }
   }
 }
