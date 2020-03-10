@@ -15,13 +15,6 @@
             "metadata": {
                 "description": "Cidr for the vnet"
             }
-        },
-        "location": {
-            "defaultValue": "eastus",
-            "type": "String",
-            "metadata": {
-                "description": "Location for all resources."
-            }
         }
     },
     "variables": {
