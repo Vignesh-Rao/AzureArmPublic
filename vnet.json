@@ -3,17 +3,24 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "vnetName": {
-            "defaultValue": "testvnet",
+            "defaultValue": "CDM-TEST-VNET",
             "type": "String",
             "metadata": {
                 "description": "Name of the virtual network"
             }
         },
         "vnetCidr": {
-            "defaultValue": "10.100.0.0/16",
+            "defaultValue": "10.20.0.0/16",
             "type": "String",
             "metadata": {
                 "description": "Cidr for the vnet"
+            }
+        },
+        "location": {
+            "defaultValue": "eastus",
+            "type": "String",
+            "metadata": {
+                "description": "Location for all resources."
             }
         }
     },
@@ -25,7 +32,7 @@
             "type": "Microsoft.Network/virtualNetworks",
             "apiVersion": "[variables('apiVersion')]",
             "name": "[parameters('vnetName')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
