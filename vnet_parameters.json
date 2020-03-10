@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "vnetName": {
-            "value": "CDM-TEST-VNET"
+            "value": "CDM-TEST-VNET1"
         },
         "vnetCidr": {
             "value": "10.20.0.0/16"
