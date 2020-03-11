@@ -5,8 +5,8 @@
         "vnetName": {
             "value": "CDM-TEST-VNET1"
         },
-        "vnetCidr": {
-            "value": "10.22.0.0/16"
+        "addressSpaces": {
+            "value": ["10.200.0.0/16","10.100.0.0/16"]
         }
     }
 }
