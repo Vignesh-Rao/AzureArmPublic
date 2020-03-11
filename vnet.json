@@ -10,7 +10,6 @@
             }
         },
         "addressSpaces": {
-            "defaultValue": [],
             "type": "array",
             "metadata": {
                 "description": "Cidr for the vnet"
