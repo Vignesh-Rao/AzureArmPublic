@@ -6,7 +6,7 @@
             "value": "CDM-TEST-VNET1"
         },
         "vnetCidr": {
-            "value": "10.21.0.0/16"
+            "value": "10.24.0.0/16"
         }
     }
 }
