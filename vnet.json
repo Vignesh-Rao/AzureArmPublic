@@ -9,9 +9,9 @@
                 "description": "Name of the virtual network"
             }
         },
-        "vnetCidr": {
-            "defaultValue": "10.20.0.0/16",
-            "type": "String",
+        "addressSpaces": {
+            "defaultValue": []
+            "type": "array",
             "metadata": {
                 "description": "Cidr for the vnet"
             }
@@ -28,9 +28,7 @@
             "location": "[resourceGroup().location]",
             "properties": {
                 "addressSpace": {
-                    "addressPrefixes": [
-                        "[parameters('vnetCidr')]"
-                    ]
+                    "addressPrefixes": "[parameters('addressSpaces')]"
                 }
             }
         }
