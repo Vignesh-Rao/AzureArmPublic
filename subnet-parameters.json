@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "existingVNETName": {
+            "value": "CDM-TEST-VNET1"
+        },
+        "newSubnetName": {
+            "value": "uat"
+        },
+        "newSubnetAddressPrefix": {
+            "value": "10.201.4.0/24"
+        }
+    }
+}
