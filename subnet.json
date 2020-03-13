@@ -16,7 +16,7 @@
             }
         },
         "newSubnetAddressPrefix": {
-            "defaultValue": "10.10.0.0/24",
+            "defaultValue": "10.201.89.0/24",
             "type": "String",
             "metadata": {
                 "description": "Address space of the subnet to add"
@@ -36,8 +36,8 @@
     ],
     "outputs": {
         "resourceID": {
-            "type": "string",
-            "value": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('newSubnetName'))]"
+            "type": "String",
+            "value": "[reference(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('existingVNETName'), parameters('newSubnetName'))).addressPrefix]"
         }
     }
 }
