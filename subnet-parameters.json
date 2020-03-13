@@ -6,10 +6,10 @@
             "value": "CDM-TEST-VNET1"
         },
         "newSubnetName": {
-            "value": "dev"
+            "value": "uat"
         },
         "newSubnetAddressPrefix": {
-            "value": "10.201.1.0/24"
+            "value": "10.201.2.0/24"
         }
     }
 }
