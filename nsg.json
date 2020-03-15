@@ -1,0 +1,30 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "newNsgName": {
+            "type": "String",
+            "defaultValue": "testnsg",
+            "metadata": {
+                "description": "Name of the new nsg to be created"
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2019-11-01",
+            "name": "[parameters('newNsgName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "securityRules": []
+            }
+        }
+    ],
+    "outputs": {
+        "nsg": {
+            "type": "String",
+            "value": "[reference(resourceId('Microsoft.Network/networkSecurityGroups', parameters('newNsgName'))).resourceGuid]"
+        }
+    }
+}
