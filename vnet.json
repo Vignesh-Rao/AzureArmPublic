@@ -10,7 +10,7 @@
             }
         },
         "addressSpaces": {
-            "type": "array",
+            "type": "String",
             "metadata": {
                 "description": "Cidr for the vnet"
             }
@@ -27,7 +27,9 @@
             "location": "[resourceGroup().location]",
             "properties": {
                 "addressSpace": {
-                    "addressPrefixes": "[parameters('addressSpaces')]"
+                    "addressPrefixes": [
+                        "[parameters('addressSpaces')]"
+                    ]
                 }
             }
         }
