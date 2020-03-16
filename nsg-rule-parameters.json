@@ -6,7 +6,7 @@
             "value": "mytestnsg"
         },
         "ruleName": {
-            "value": "AllowSSH"
+            "value": "AllowSSHH"
         },
         "ruleProtocol": {
             "value": "TCP"
