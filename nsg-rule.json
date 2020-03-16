@@ -1,0 +1,85 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "networkSecurityGroupName": {
+            "defaultValue": "mytestnsg",
+            "type": "String",
+            "metadata": {
+                "description": "NSG to which we want to add rule."
+            }
+        },
+        "ruleName": {
+            "defaultValue": "AllowHTTP",
+            "type": "String",
+            "metadata": {
+                "description": "Name of security Group rule."
+            }
+        },
+        "ruleProtocol": {
+            "type": "String",
+            "metadata": {
+                "description": "TCP or UDP or ICMP"
+            }
+        },
+        "sourcePortRange": {
+            "type": "String",
+            "metadata": {
+                "description": "Range of source ports"
+            }
+        },
+        "destinationPortRange": {
+            "type": "String",
+            "metadata": {
+                "description": "Range of destination ports"
+            }
+        },
+        "sourceAddressPrefix": {
+            "type": "String",
+            "metadata": {
+                "description": "Prefix of Source Address"
+            }
+        },
+        "destinationAddressPrefix": {
+            "type": "String",
+            "metadata": {
+                "description": "Prefix of Destination Address"
+            }
+        },
+        "allowOrDeny": {
+            "type": "String",
+            "metadata": {
+                "description": "Allow or Deny traffic"
+            }
+        },
+        "rulePriority": {
+            "type": "String",
+            "metadata": {
+                "description": "Range of destination ports"
+            }
+        },
+        "ruleDirection": {
+            "type": "String",
+            "metadata": {
+                "description": "Range of destination ports"
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "apiVersion": "2018-08-01",
+            "name": "[concat(parameters('networkSecurityGroupName'),'/',parameters('ruleName'))]",
+            "properties": {
+                "protocol": "[parameters('ruleProtocol')]",
+                "sourcePortRange": "[parameters('sourcePortRange')]",
+                "destinationPortRange": "[parameters('destinationPortRange')]",
+                "sourceAddressPrefix": "[parameters('sourceAddressPrefix')]",
+                "destinationAddressPrefix": "[parameters('destinationAddressPrefix')]",
+                "access": "[parameters('allowOrDeny')]",
+                "priority": "[parameters('rulePriority')]",
+                "direction": "[parameters('ruleDirection')]"
+            }
+        }
+    ]
+}
